@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		58031CA428ECFB6B00BCC5E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58031CA328ECFB6B00BCC5E0 /* AppDelegate.swift */; };
 		58031CA628ECFB6B00BCC5E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58031CA528ECFB6B00BCC5E0 /* SceneDelegate.swift */; };
-		58031CA828ECFB6B00BCC5E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58031CA728ECFB6B00BCC5E0 /* ViewController.swift */; };
 		58031CAB28ECFB6B00BCC5E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58031CA928ECFB6B00BCC5E0 /* Main.storyboard */; };
 		58031CAD28ECFB6F00BCC5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58031CAC28ECFB6F00BCC5E0 /* Assets.xcassets */; };
 		58031CB028ECFB6F00BCC5E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58031CAE28ECFB6F00BCC5E0 /* LaunchScreen.storyboard */; };
+		5871FEBA28F600D8008FC246 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5871FEB928F600D8008FC246 /* ListTableViewController.swift */; };
+		5871FEBC28F60118008FC246 /* ModelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5871FEBB28F60118008FC246 /* ModelList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		58031CA028ECFB6B00BCC5E0 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58031CA328ECFB6B00BCC5E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58031CA528ECFB6B00BCC5E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		58031CA728ECFB6B00BCC5E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		58031CAA28ECFB6B00BCC5E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58031CAC28ECFB6F00BCC5E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58031CAF28ECFB6F00BCC5E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58031CB128ECFB6F00BCC5E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5871FEB928F600D8008FC246 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		5871FEBB28F60118008FC246 /* ModelList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				58031CA328ECFB6B00BCC5E0 /* AppDelegate.swift */,
 				58031CA528ECFB6B00BCC5E0 /* SceneDelegate.swift */,
-				58031CA728ECFB6B00BCC5E0 /* ViewController.swift */,
+				5871FEB928F600D8008FC246 /* ListTableViewController.swift */,
+				5871FEBB28F60118008FC246 /* ModelList.swift */,
 				58031CA928ECFB6B00BCC5E0 /* Main.storyboard */,
 				58031CAC28ECFB6F00BCC5E0 /* Assets.xcassets */,
 				58031CAE28ECFB6F00BCC5E0 /* LaunchScreen.storyboard */,
@@ -138,9 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58031CA828ECFB6B00BCC5E0 /* ViewController.swift in Sources */,
+				5871FEBA28F600D8008FC246 /* ListTableViewController.swift in Sources */,
 				58031CA428ECFB6B00BCC5E0 /* AppDelegate.swift in Sources */,
 				58031CA628ECFB6B00BCC5E0 /* SceneDelegate.swift in Sources */,
+				5871FEBC28F60118008FC246 /* ModelList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
