@@ -15,11 +15,30 @@ class ListTableViewController: UITableViewController {
     }
 
     @IBAction func pushAddItem(_ sender: Any) {
-        addItem(nameItem: "Name")
-        tableView.reloadData()
+        let alertController = UIAlertController(title: "Item name", message: nil, preferredStyle: .alert)
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Create new item"
+        }
+        
+        let alertCancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let alertCreate = UIAlertAction(title: "Create", style: .default) {
+            [weak self] (alert) in
+            let newItem = alertController.textFields![0].text
+            addItem(nameItem: newItem!)
+            self?.tableView.reloadData()
+        }
+        
+        alertController.addAction(alertCancel)
+        alertController.addAction(alertCreate)
+        
+        present(alertController, animated: true)
     }
     
-
+    @IBAction func editAction(_ sender: Any) {
+        tableView.setEditing(!tableView.isEditing, animated: true)
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -35,7 +54,7 @@ class ListTableViewController: UITableViewController {
         
         let currentItem = toDoList[indexPath.row]
         cell.textLabel?.text = currentItem["Name"] as? String
-        
+
         if (currentItem["isComplited"] as? Bool) == true {
             cell.accessoryType = .checkmark
         } else {
@@ -52,14 +71,14 @@ class ListTableViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    
+//
 
         override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             removeItem(item: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
-            
+
         }
     }
      
@@ -67,7 +86,7 @@ class ListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+
         if changeState(index: indexPath.row) {
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         } else {
@@ -75,12 +94,13 @@ class ListTableViewController: UITableViewController {
         }
     }
 
-    /*
+    
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+        moveRowAt(fromIndex: fromIndexPath.row, to: to.row)
+        tableView.reloadData()
     }
-    */
+    
 
     /*
     // Override to support conditional rearranging of the table view.

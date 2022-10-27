@@ -10,7 +10,7 @@ import Foundation
 var toDoList: [[String: Any]] {
     set {
         UserDefaults.standard.set(newValue, forKey: "ToDoData")
-        UserDefaults.standard.synchronize()
+      //  UserDefaults.standard.synchronize()
     }
     get {
         if let array = UserDefaults.standard.array(forKey: "ToDoData") as? [[String: Any]] {
@@ -28,6 +28,13 @@ func addItem(nameItem: String, isCompleted: Bool = false) {
 
 func removeItem(item: Int) {
     toDoList.remove(at: item)
+}
+
+func moveRowAt(fromIndex: Int, to: Int){
+    let from = toDoList[fromIndex]
+    toDoList.remove(at: fromIndex)
+    toDoList.insert(from, at: to)
+    
 }
 
 func changeState(index: Int) -> Bool {
