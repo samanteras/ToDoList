@@ -9,6 +9,9 @@ import UIKit
 
 class ListTableViewController: UITableViewController {
 
+ 
+    @IBOutlet weak var imageCheck: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,9 +59,9 @@ class ListTableViewController: UITableViewController {
         cell.textLabel?.text = currentItem["Name"] as? String
 
         if (currentItem["isComplited"] as? Bool) == true {
-            cell.accessoryType = .checkmark
+            cell.imageView?.image = UIImage(named: "check")
         } else {
-            cell.accessoryType = .none
+            cell.imageView?.image = UIImage(named: "uncheck")
         }
         
         return cell
@@ -88,9 +91,9 @@ class ListTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
 
         if changeState(index: indexPath.row) {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+            tableView.cellForRow(at: indexPath)?.imageView?.image = UIImage(named: "check")
         } else {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+            tableView.cellForRow(at: indexPath)?.imageView?.image = UIImage(named: "uncheck")
         }
     }
 
