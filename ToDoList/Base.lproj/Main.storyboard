@@ -48,11 +48,13 @@
                     <navigationItem key="navigationItem" title="ToDo Item" id="Ncn-pd-YCK">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="kFJ-bQ-Wcn">
+                                <color key="tintColor" systemColor="systemGreenColor"/>
                                 <connections>
                                     <action selector="pushAddItem:" destination="JYU-dN-7gw" id="9Pa-oG-d8v"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="edit" id="HXp-Dk-vLd">
+                                <color key="tintColor" red="0.17871248635149573" green="0.65242480118754154" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="editAction:" destination="JYU-dN-7gw" id="r9A-qq-5Ig"/>
                                 </connections>

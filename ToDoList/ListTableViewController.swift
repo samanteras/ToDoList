@@ -14,6 +14,7 @@ class ListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = UIColor.systemGroupedBackground
 
     }
 
@@ -39,7 +40,11 @@ class ListTableViewController: UITableViewController {
     }
     
     @IBAction func editAction(_ sender: Any) {
+       
         tableView.setEditing(!tableView.isEditing, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){ [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -64,9 +69,26 @@ class ListTableViewController: UITableViewController {
             cell.imageView?.image = UIImage(named: "uncheck")
         }
         
+        if tableView.isEditing {
+            cell.textLabel?.alpha = 0.4
+            cell.imageView?.alpha = 0.4
+       
+        } else {
+            cell.textLabel?.alpha = 1
+            cell.imageView?.alpha = 1
+        }
+        
+        
         return cell
     }
 
+//    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        if tableView.isEditing {
+//            return .none
+//        } else {
+//            return .delete
+//        }
+//    }
 
     
     // Override to support conditional editing of the table view.
